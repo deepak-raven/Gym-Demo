@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+
+@theme {
+  --color-surface-container-low: #131313;
+  --color-on-tertiary: #605f5e;
+  --color-tertiary-fixed: #ffffff;
+  --color-on-primary-fixed: #3a4a00;
+  --color-surface-bright: #2c2c2c;
+  --color-error: #ff7351;
+  --color-on-primary: #516700;
+  --color-tertiary-fixed-dim: #f3f0ef;
+  --color-tertiary-container: #edeaea;
+  --color-surface-tint: #f3ffca;
+  --color-tertiary-dim: #edeaea;
+  --color-outline-variant: #484847;
+  --color-on-secondary-container: #fff6f3;
+  --color-secondary: #ff7439;
+  --color-outline: #767575;
+  --color-on-primary-container: #4a5e00;
+  --color-primary-dim: #beee00;
+  --color-on-error: #450900;
+  --color-on-background: #ffffff;
+  --color-on-secondary-fixed-variant: #903100;
+  --color-on-error-container: #ffd2c8;
+  --color-error-container: #b92902;
+  --color-inverse-primary: #516700;
+  --color-primary-fixed: #cafd00;
+  --color-primary: #f3ffca;
+  --color-surface-container-highest: #262626;
+  --color-secondary-fixed-dim: #ffb194;
+  --color-surface-container-lowest: #000000;
+  --color-surface-variant: #262626;
+  --color-on-tertiary-container: #575656;
+  --color-secondary-dim: #ff7439;
+  --color-secondary-fixed: #ffc4af;
+  --color-inverse-surface: #fcf9f8;
+  --color-on-secondary: #3f1100;
+  --color-on-surface: #ffffff;
+  --color-primary-container: #cafd00;
+  --color-surface-dim: #0e0e0e;
+  --color-on-secondary-fixed: #611e00;
+  --color-error-dim: #d53d18;
+  --color-on-tertiary-fixed: #515050;
+  --color-on-tertiary-fixed-variant: #6e6d6d;
+  --color-on-surface-variant: #adaaaa;
+  --color-surface-container-high: #201f1f;
+  --color-secondary-container: #a73a00;
+  --color-inverse-on-surface: #565555;
+  --color-tertiary: #fcf9f8;
+  --color-background: #0e0e0e;
+  --color-on-primary-fixed-variant: #526900;
+  --color-surface-container: #1a1919;
+  --color-primary-fixed-dim: #beee00;
+  --color-surface: #0e0e0e;
+  
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+  
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .glass-nav {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(20px);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #0e0e0e;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cafd00;
+    border-radius: 10px;
+  }
+
+  .editorial-header {
+    letter-spacing: -0.04em;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, #f3ffca 0%, #cafd00 100%);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(202, 253, 0, 0.1) 0%, rgba(14, 14, 14, 0) 50%);
+  }
+
+  .glass-card {
+    background: rgba(38, 38, 38, 0.6);
+    backdrop-filter: blur(20px);
+  }
+}
