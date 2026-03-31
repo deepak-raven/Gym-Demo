@@ -142,4 +142,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Preloader & Initial Fade-in
+  window.addEventListener('load', () => {
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      preloader.classList.add('loaded');
+      // Adding a small delay before fading in body to ensure smoother transition
+      setTimeout(() => {
+        document.body.classList.add('ready');
+      }, 500);
+    } else {
+      document.body.classList.add('ready');
+    }
+  });
 });

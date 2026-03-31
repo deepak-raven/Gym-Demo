@@ -12,11 +12,46 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <style>
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #0e0e0e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+        #preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            font-style: italic;
+            color: #CCFF00;
+            letter-spacing: -0.05em;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.98); }
+        }
+        body { opacity: 0; transition: opacity 0.5s ease; }
+        body.ready { opacity: 1; }
+    </style>
     <script type="module" src="/src/main.js"></script>
 </head>
 
 <body
     class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary overflow-x-hidden custom-scrollbar">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-logo uppercase">Kinetic Elite</div>
+    </div>
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl border-b border-white/5">
         <div class="flex justify-between items-center px-4 md:px-8 py-4 md:py-6 max-w-[1440px] mx-auto">
