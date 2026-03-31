@@ -113,4 +113,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Pricing Toggle Logic
+  const toggleMonthly = document.querySelector('#toggle-monthly');
+  const toggleAnnually = document.querySelector('#toggle-annually');
+  const priceValues = document.querySelectorAll('.price-value');
+
+  if (toggleMonthly && toggleAnnually) {
+    toggleMonthly.addEventListener('click', () => {
+      toggleMonthly.classList.add('bg-primary', 'text-on-primary');
+      toggleMonthly.classList.remove('text-on-surface');
+      toggleAnnually.classList.remove('bg-primary', 'text-on-primary');
+      toggleAnnually.classList.add('text-on-surface');
+      
+      priceValues.forEach(val => {
+        val.textContent = val.dataset.monthly;
+      });
+    });
+
+    toggleAnnually.addEventListener('click', () => {
+      toggleAnnually.classList.add('bg-primary', 'text-on-primary');
+      toggleAnnually.classList.remove('text-on-surface');
+      toggleMonthly.classList.remove('bg-primary', 'text-on-primary');
+      toggleMonthly.classList.add('text-on-surface');
+      
+      priceValues.forEach(val => {
+        val.textContent = val.dataset.annually;
+      });
+    });
+  }
 });

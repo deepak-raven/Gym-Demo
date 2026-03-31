@@ -489,32 +489,40 @@
     <!-- 6. Membership Pricing (from SCREEN_5) -->
     <section class="py-16 md:py-32 px-4 md:px-8 max-w-[1440px] mx-auto border-t border-white/5 relative overflow-hidden" id="pricing">
         <div class="bg-blob left-1/2 -top-64 -translate-x-1/2 opacity-20"></div>
-        <div class="mb-16 md:mb-20 text-center md:text-left relative z-10">
-            <span class="font-label text-xs md:text-sm uppercase tracking-[0.2em] text-primary block mb-4">Invest in
-                Performance</span>
-            <h2 class="font-headline text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase mb-6 leading-[1.1] md:leading-none">Choose Your <span
-                    class="text-primary italic">Velocity.</span></h2>
-            <p class="font-body text-on-surface-variant text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed">Elite-tier access to world-class equipment,
-                recovery suites, and personalized programming.</p>
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 md:mb-20 gap-8 relative z-10">
+            <div class="text-center md:text-left">
+                <span class="font-label text-xs md:text-sm uppercase tracking-[0.2em] text-primary block mb-4">Invest in
+                    Performance</span>
+                <h2 class="font-headline text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase mb-6 leading-[1.1] md:leading-none">Choose Your <span
+                        class="text-primary italic">Velocity.</span></h2>
+                <p class="font-body text-on-surface-variant text-base md:text-lg max-w-2xl mx-auto md:mx-0 leading-relaxed">Elite-tier access to world-class equipment,
+                    recovery suites, and personalized programming.</p>
+            </div>
+            <!-- Pricing Toggle -->
+            <div class="flex items-center gap-4 bg-surface-container-high p-2 rounded-full border border-white/10 shrink-0">
+                <button id="toggle-monthly" class="px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest bg-primary text-on-primary transition-all duration-300">Monthly</button>
+                <button id="toggle-annually" class="px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest text-on-surface transition-all duration-300">Annually</button>
+            </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 items-stretch">
+        <div class="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:mx-0 md:px-0 items-stretch">
             <!-- Basic Tier -->
             <div
-                class="bg-surface-container-low rounded-xl p-10 flex flex-col justify-between group hover:bg-surface-container transition-all duration-300">
+                class="bg-surface-container-low rounded-3xl p-10 flex flex-col justify-between group hover:bg-surface-container transition-all duration-300 min-w-[85vw] md:min-w-0 snap-center mr-4 md:mr-0 border border-white/5">
                 <div>
                     <div class="flex justify-between items-start mb-12">
                         <div>
                             <h3 class="font-headline text-3xl font-bold uppercase mb-2">Basic</h3>
-                            <p class="text-on-surface-variant text-xs uppercase tracking-widest">Entry Level Flow</p>
+                            <p class="text-on-surface-variant text-[10px] uppercase tracking-widest">Entry Level Flow</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-outline-variant group-hover:text-primary">bolt</span>
                     </div>
                     <div class="mb-12">
-                        <div class="flex items-baseline gap-1"><span
-                                class="text-4xl font-headline font-bold">$</span><span
-                                class="text-7xl font-headline font-black tracking-tighter">89</span><span
-                                class="text-on-surface-variant uppercase tracking-widest text-xs">/mo</span></div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-headline font-bold">$</span>
+                            <span class="text-7xl font-headline font-black tracking-tighter price-value" data-monthly="89" data-annually="69">89</span>
+                            <span class="text-on-surface-variant uppercase tracking-widest text-[10px]">/mo</span>
+                        </div>
                     </div>
                     <ul class="space-y-6 mb-12">
                         <li class="flex items-center gap-4">
@@ -534,7 +542,7 @@
             </div>
             <!-- Pro Tier (Highlighted) -->
             <div
-                class="bg-surface-container-high rounded-xl p-10 flex flex-col justify-between group md:scale-[1.05] relative overflow-hidden ring-2 ring-primary ring-inset shadow-2xl my-4 md:my-0">
+                class="bg-surface-container-high rounded-3xl p-10 flex flex-col justify-between group md:scale-[1.05] relative overflow-hidden ring-2 ring-primary ring-inset shadow-2xl my-4 md:my-0 min-w-[85vw] md:min-w-0 snap-center mr-4 md:mr-0 z-20">
                 <div
                     class="absolute top-0 right-0 bg-primary text-on-primary px-6 py-2 rounded-bl-xl font-label text-[10px] font-black uppercase tracking-[0.2em]">
                     Most Popular</div>
@@ -542,16 +550,17 @@
                     <div class="flex justify-between items-start mb-12">
                         <div>
                             <h3 class="font-headline text-3xl font-bold uppercase mb-2 text-primary">Pro</h3>
-                            <p class="text-on-surface-variant text-xs uppercase tracking-widest">The Sweet Spot</p>
+                            <p class="text-on-surface-variant text-[10px] uppercase tracking-widest">The Sweet Spot</p>
                         </div>
                         <span class="material-symbols-outlined text-primary"
                             style="font-variation-settings: 'FILL' 1;">star</span>
                     </div>
                     <div class="mb-12">
-                        <div class="flex items-baseline gap-1"><span
-                                class="text-4xl font-headline font-bold">$</span><span
-                                class="text-7xl font-headline font-black tracking-tighter">149</span><span
-                                class="text-on-surface-variant uppercase tracking-widest text-xs">/mo</span></div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-headline font-bold">$</span>
+                            <span class="text-7xl font-headline font-black tracking-tighter price-value" data-monthly="149" data-annually="119">149</span>
+                            <span class="text-on-surface-variant uppercase tracking-widest text-[10px]">/mo</span>
+                        </div>
                     </div>
                     <ul class="space-y-6 mb-12">
                         <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary text-xl"
@@ -571,21 +580,22 @@
             </div>
             <!-- Elite Tier -->
             <div
-                class="bg-surface-container-low rounded-xl p-10 flex flex-col justify-between group hover:bg-surface-container transition-all">
+                class="bg-surface-container-low rounded-3xl p-10 flex flex-col justify-between group hover:bg-surface-container transition-all min-w-[85vw] md:min-w-0 snap-center border border-white/5">
                 <div>
                     <div class="flex justify-between items-start mb-12">
                         <div>
                             <h3 class="font-headline text-3xl font-bold uppercase mb-2">Elite</h3>
-                            <p class="text-on-surface-variant text-xs uppercase tracking-widest">No Compromise</p>
+                            <p class="text-on-surface-variant text-[10px] uppercase tracking-widest">No Compromise</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-outline-variant group-hover:text-primary">diamond</span>
                     </div>
                     <div class="mb-12">
-                        <div class="flex items-baseline gap-1"><span
-                                class="text-4xl font-headline font-bold">$</span><span
-                                class="text-7xl font-headline font-black tracking-tighter">299</span><span
-                                class="text-on-surface-variant uppercase tracking-widest text-xs">/mo</span></div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-headline font-bold">$</span>
+                            <span class="text-7xl font-headline font-black tracking-tighter price-value" data-monthly="299" data-annually="249">299</span>
+                            <span class="text-on-surface-variant uppercase tracking-widest text-[10px]">/mo</span>
+                        </div>
                     </div>
                     <ul class="space-y-6 mb-12">
                         <li class="flex items-center gap-4">
